@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TL-SMT</title>
+    <meta name="description"
+          content="Knight is a beautiful Bootstrap 4 template for product landing pages."/>
+
+    <!--Inter UI font-->
+    <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet">
+
+    <!--vendors styles-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+    <!-- Bootstrap CSS / Color Scheme -->
+    <link rel="stylesheet" href="static/css/red.css" id="theme-color">
+    <link rel="stylesheet" href="static/css/style1.css" id="theme-color">
+    <link rel="icon" href="static/img/logo3.png" sizes="48x48" type="image/png">
+</head>
+<body>
+
+<!--navigation-->
+<section class="smart-scroll">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <a class="navbar-brand heading-black" href="/" style="font-family:sans-serif"><img src="static/img/logo3.png"  style="width: 64px;">
+                Translator
+            </a>
+            <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse"
+                    data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span data-feather="grid"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="/trans">Transformer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="/Seq">Seq2Seq</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="/bert">Bert</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll d-flex flex-row align-items-center text-primary" href="/">
+                            <em data-feather="layout" width="18" height="18" class="mr-2"></em>
+                            Home
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
+<!-- features section -->
+<section class="pt-6 pb-7" id="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center">
+                <h3 class="heading-black">Statistical machine translation (SMT)</h3>
+                <p>Statistical machine translation is a machine translation paradigm where translations are generated on the basis of statistical models whose parameters are derived from the analysis of bilingual text corpora. </p>
+            </div>
+        </div>
+    <div class="newsletter-subscribe">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <form method="POST">
+                     <p>        </p>
+                        <!-- Enter text to translate. -->
+                        <div class="form-group" style="font-family: Arial, Helvetica, sans-serif;">
+                            <label for="text-to-translate"><strong>Enter the text you'd like to
+                                    translate:</strong></label>
+                            <textarea class="form-control" name="text-to-translate" placeholder="Your sentence here..." required="" type="text" id="text_to_translate"
+                                rows="5"style="margin-top: 0px; margin-bottom: 0px; height: 60px;"></textarea>
+                        </div>
+                        <div class="form-group" style="font-family: Arial, Helvetica, sans-serif;">
+                          <label for="select-language"><strong>Translate to:</strong></label>
+                          <select class="form-control" name="select-language" id="select-language">
+                              <option value="de_DE">German</option>
+                              <option value="es_XX">Spanish</option>
+                              <option value="hi_IN">Hindi</option>
+                              <option value="zh_CN">Chinese</option>
+                          </select>
+                      </div>
+                        <div class="form-group" style="font-family: Arial, Helvetica, sans-serif;">
+                          <label for="text-to-translate2"><strong>Enter your referal text
+                                  translate:</strong></label>
+                          <textarea class="form-control" name="text-to-translate2" placeholder="Your sentence here..." required="" type="text" id="text_to_translate2"
+                              rows="5"style="margin-top: 0px; margin-bottom: 0px; height: 60px;"></textarea>
+                      </div>
+                        <button type="submit" class="btn btn-primary mb-2" style="font-family: Arial, Helvetica, sans-serif;" id="results">Translate text</button></br>
+                        </br>
+                    </form>
+                    <!-- Translated text returned by the Translate API is rendered here. -->
+                </div>
+            
+                <div class="col">
+                  <p>         </p>
+                    <form>
+                        <div class="form-group" id="translator-text-response" style="font-family: Arial, Helvetica, sans-serif;">
+                            <label for="translation_result"><strong>Translated text:</strong></label>
+                            <textarea readonly class="form-control" placeholder="Get your output here..." id="translation_result"
+                                rows="5"style="margin-top: 0px; margin-bottom: 0px; height: 60px;">{{ translation_result }}</textarea>
+                        </div>
+                        <div class="form-group" id="translator-text-response" style="font-family: Arial, Helvetica, sans-serif;">
+                            <label for="translation_result2" ,><strong>BLEU_Score:</strong></label>
+                            <p style="color: rgb(255, 0, 76);">{{ translation_result2 }}</p>
+                            <label for="translation_result3" ,><strong>BLEU_Count:</strong></label>
+                            <p style="color: rgb(255, 0, 76);">{{ translation_result3 }}</p>
+                            <label for="translation_result4" ,><strong>Precisions:</strong></label>
+                            <p style="color: rgb(255, 0, 76);">{{ translation_result4 }}</p>
+                      </div>
+                    </form>
+                    <form>
+            
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div >
+</section>
+<section class="py-7" id="faq">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center">
+                <h2>Frequently asked questions</h2>
+                <p class="text-muted lead">Answers to most common questions.</p>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-10 mx-auto">
+                <div class="row">
+                    <div class="col-md-6 mb-5">
+                        <h6>What is Translated?</h6>
+                        <p class="text-muted">Translated is a professional translation and localization service provider. We have been offering human translation services for the last 20 years to our 217,624 clients, in 194 languages and 40 areas of expertise.</p>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <h6>What makes you different from other providers?</h6>
+                        <p class="text-muted">We use a powerful combination of human creativity and machine intelligence to craft consistent quality translations, quickly.</p>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <h6>What can you translate?</h6>
+                        <p class="text-muted">We can translate text, and you can get your output via instant quote panel.</p>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <h6>Are your translations certified?</h6>
+                        <p class="text-muted">This certificate attests that the translation is in intial development stage translator to the best of his/her ability.</p>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <h6>How much does a translation cost?</h6>
+                        <p class="text-muted">It is free of cost right now.</p>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <h6>What is localization?</h6>
+                        <p class="text-muted">Localization (sometimes known as L10n) is the process of modifying a product (a software program, website, or document) for an audience in a different country, culture, or region of the world.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6 mx-auto text-center">
+                <h5 class="mb-4">Have questions?</h5>
+                <a href="/home" class="btn btn-primary">Contact us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--footer-->
+<footer class="py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5 mr-auto">
+                <h5>About Translator</h5>
+                <p class="text-muted">Translation is a mental activity in which a meaning of given linguistic discourse is rendered from one language to another.
+                    It is the act of transferring the linguistic entities from one language in to their equivalents in to another language</p>
+                <ul class="list-inline social social-sm">
+                    <li class="list-inline-item">
+                        <a href="https://www.linkedin.com/in/ranjith-kumar-58a676191"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://github.com/Rangow4562"><i class="fa fa-github"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://developers.google.com/profile/u/115403157552394932450"><i class="fa fa-google-plus"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/rangow2260"><i class="fa fa-dribbble"></i></a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="col-sm-2">
+                <h5><li><a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://www.website.com.">Refer a friend</a></li></h5>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12 text-muted text-center small-xl">
+                &copy; 2021 Translator - All Rights Reserved
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--scroll to top-->
+<div class="scroll-top">
+    <i class="fa fa-angle-up" aria-hidden="true"></i>
+</div>
+
+<!-- theme switcher (FOR DEMO ONLY - REMOVE FROM PRODUCTION)-->
+<div class="switcher-wrap">
+  
+  
+</div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="static/js/scripts.js"></script>
+</body>
+</html>
