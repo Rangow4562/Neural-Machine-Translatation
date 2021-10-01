@@ -1,0 +1,75 @@
+.wrapper {
+    display: flex;
+    width: 95%;
+    justify-content: space-around;
+  }
+  
+  .card {
+    width: 260px;
+    height: 360px;
+    border-radius: 15px;
+    padding: 0.3rem;
+    background: rgba(255, 255, 255, 0);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.4s ease-out;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  }
+  .card:hover {
+    transform: translateY(20px);
+  }
+  .card:hover:before {
+    opacity: 1;
+  }
+  .card:hover:after {
+    opacity: 1;
+  }
+  .card:hover .info {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  .card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: rgba(32, 32, 32, 0.219);
+    z-index: 2;
+    transition: 0.5s;
+    opacity: 0;
+  }
+
+  .card img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+  }
+  .card .info {
+    width: 240px;
+    height: 340px;
+    position: relative;
+    z-index: 3;
+    color: rgba(255, 166, 0, 0.26);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s;
+  }
+  .card .info h1 {
+    margin: 0px;
+  }
+  .card .info p {
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin-top: 8px;
+  }
+
