@@ -1,0 +1,4 @@
+Unlike the other sets, this set was used as test data for the 2006 Shared Task.
+At the time Czech was not used as part of this corpus.
+
+So, for Spanish, German, and French to English, the data matches line-by-line the untokenized form of the 2006 test data. For Czech, the intersection of the 2006 test data source news articles with those that were also aligned across all languages in 2007 was used. This means there is a difference of about 100 lines between the Czech-English data and the other sets, and not all remaining lines may match perfectly.
