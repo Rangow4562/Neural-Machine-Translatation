@@ -40,3 +40,11 @@ I have chosen four distinct models in this project, notably: -
 
 #### .2) Infopage
 ![image](https://www.linkpicture.com/q/secondpage.png)
+
+#### .3) Modelpage
+![image](https://www.linkpicture.com/q/Thirdpage.png)
+
+#### .4) Translatorpage
+![image](https://www.linkpicture.com/q/fouthpage.png)
+
+
