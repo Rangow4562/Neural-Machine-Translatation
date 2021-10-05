@@ -35,4 +35,8 @@ I have chosen four distinct models in this project, notably: -
 *	Statistical Machine Translation
 
 ### Screenshots
+#### .1) Homepage
 ![image](https://www.linkpicture.com/q/firstpage_1.png)
+
+#### .2) Infopage
+![image](https://www.linkpicture.com/q/secondpage.png)
