@@ -29,7 +29,7 @@ total number of sentence fragments: 31.62.
 
 ### Models
 I have chosen four distinct models in this project, notably: -
-•	Transformer (NLP)
-•	Sequence to Sequence with Attention
-•	Bidirectional Encoder Representations from Transformers
-•	Statistical Machine Translation
+*	Transformer (NLP)
+*	Sequence to Sequence with Attention
+*	Bidirectional Encoder Representations from Transformers
+*	Statistical Machine Translation
